@@ -1,0 +1,68 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@300;400;500&family=Poppins:wght@100;800&family=Roboto:wght@300&display=swap'); */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    /* background: #39297b; */
+    /* color: #fff; */
+    background: #aeaeb125;
+    color: #116240;
+}
+h1{
+    text-align: center;
+    margin: 100px auto 50px ;
+    font-weight: 800;
+    /* line-height: 3rem; */
+}
+form{
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    height: 80px;
+    background: #97979a25;
+    color: #116240;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+form input{
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #116240;
+    font-size: 18px;
+    padding: 0 30px;
+}
+form button{
+    padding: 0 40px;
+    height: 100%;
+    background: #116240;
+    color:#ffe ;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius:8px ;
+    cursor: pointer;
+}
+::placeholder{
+    color: #116240;
+    font-size: 18px;
+}
+#show-more-btn{
+    background:#116240 ;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 10px auto 100px;
+    cursor: pointer;
+    display: none;
+   
+}
