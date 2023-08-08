@@ -1,5 +1,6 @@
 const accessKey = "Upb8Tjdor5efkPOBBzoVbScs8hjK3G5nW_zHcvszk4E";
 
+
 const searchForm = document.getElementById("search-form");
 const searchBox = document.getElementById("search-box");
 const searchResult = document.getElementById("search-result");
@@ -10,7 +11,7 @@ let page = 1;
 
 async function searchImages(){
   keyword = searchBox.value;
-  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}`;
+  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=12`;
 
   const response = await fetch(url);
   const data =  await response.json();
@@ -20,7 +21,15 @@ async function searchImages(){
   results.map((result) =>{
     const image = document.createElement("img");
     image.src= result.urls.small;
+    const imageLink = document.createElement("a");
+    imageLink.href = result.links.html;
+    imageLink.target = "_blank"
+
+    imageLink.appendChild(image);
+    searchResult.appendChild(imageLink);
   })
+
+   showMoreBtn.style.display = "block";
   
 }
 
@@ -30,6 +39,14 @@ searchForm.addEventListener("submit", (e)=>{
     searchImages();
 })
 
+showMoreBtn.addEventListener("click", ()=>{
+  page++;
+  searchImages();
+
+})
+
+
+
 
 
 
@@ -37,4 +54,4 @@ searchForm.addEventListener("submit", (e)=>{
 // 9ziMr2lyhx5sl91jZLjUCcg-RejMzc23wdnHCXbLCtA
 //https:api.unsplash.com/search/photos?page=1&query=office&client_id=Upb8Tjdor5efkPOBBzoVbScs8hjK3G5nW_zHcvszk4E
 
-//https://api.unsplash.com/search/photos?page=1&query=office&client_id=Upb8Tjdor5efkPOBBzoVbScs8hjK3G5nW_zHcvszk4E
+// https://api.unsplash.com/search/photos?page=1&query=office&client_id=Upb8Tjdor5efkPOBBzoVbScs8hjK3G5nW_zHcvszk4E
